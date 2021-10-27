@@ -64,16 +64,6 @@ function App() {
     }
   }
 
-  const getTitleClass = ({ isFolder, isTopLevel }) => {
-    let className = "ant-tree-node-content-title-prodly"
-    if (isFolder) {
-      className = "ant-tree-node-content-title-prodly-folder"
-    } else if (isTopLevel) {
-      className = "ant-tree-node-content-title-prodly-top-level"
-    }
-    return className;
-  }
-
   return (
     <div className="App">
     <Layout className="site-layout">
@@ -88,7 +78,7 @@ function App() {
               borderBottomRightRadius: 16,
               borderTopLeftRadius: 16,
               borderTopRightRadius: 16,
-              height: 500,
+              height: 800,
               overflowY: "scroll"
             }}
             title="Components"
@@ -109,16 +99,12 @@ function App() {
             style={{ overflow: "hidden"}}
             switcherIcon={<DownOutlined />}
             titleRender={(props) => {
-              const { isFolder, isTopLevel, showDifferenceType, showIcon, name, key } = props
-              const titleClassName = getTitleClass({ isFolder, isTopLevel })
+              const { showDifferenceType, showIcon, label, key } = props
               return (
-                <div style={{ display: "flex", alignItems: "center",  }} onClick={(p) => console.log(p)}>
+                <div style={{ display: "flex", alignItems: "center",  }}>
                   {showIcon ? <img src="/tree-icon.svg" alt="icon" style={{ marginRight: 8 }} /> : null}
-                  <span className={titleClassName}>{name || key}</span>
-                  {showDifferenceType
-                    ? renderDifferenceType([IN_DESTINATION_ONLY, VALUES_DIFFER, IN_SOURCE_ONLY][Math.floor(Math.random() * (2 - 0 + 1) + 0)])
-                    : null
-                  }
+                  <span>{label || key}</span>
+                  {showDifferenceType ? renderDifferenceType(showDifferenceType) : null}
                 </div>
               )
             }}
