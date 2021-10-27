@@ -2,7 +2,7 @@ const treeData = [
     {
       name: 'CustomObject',
       key: 'Objects',
-      checkable: false,
+      isTopLevel: true,
       children: [
         {
           name: 'Account',
@@ -13,32 +13,27 @@ const treeData = [
           children: [
             {
               key: 'Layout',
-              disabled: true,
-              checkable: false,
+              isFolder: true,
               children: [
                 {
                   name: 'Account-Partner Accounts',
                   status: 'added',
                   key: 'Partner Accounts',
-                  showDifferenceType: false,
-                showIcon: true,
-                disabled: true,
-                checkable: false,
+                  showDifferenceType: true,
+                  showIcon: true,
                 },
                 {
                   name: 'Account-User Community - Account Layout',
                   status: 'removed',
                   key: 'User Community - Account Layout',
                   showDifferenceType: true,
-                    showIcon: true,
-                    disabled: true
+                  showIcon: true,
                 },
               ],
             },
             {
               key: 'Trigger',
-              checkable: false,
-              disabled: true,
+              isFolder: true,
               children: [
                 {
                   name: 'AccountListener',
@@ -64,10 +59,10 @@ const treeData = [
               modified: 'true',
               id: 'fullName',
               key: 'Fields',
-              disabled: true,
-              checkable: true,
-              showDifferenceType: true,
+              isFolder: true,
+              showDifferenceType: false,
               showIcon: false,
+              selectable: false,
               children: [
                 {
                   status: 'added',
@@ -121,8 +116,7 @@ const treeData = [
               id: 'fullName',
               key: 'Validation Rules',
               showIcon: false,
-              disabled: true,
-              checkable: true,
+              isFolder: true,
               children: [
                 {
                   status: 'modified',
@@ -159,7 +153,7 @@ const treeData = [
     {
       name: 'ApexClass',
       key: 'Apex Class',
-      checkable: false,
+      isTopLevel: true,
       children: [
         {
           name: 'AlphaClass',
@@ -173,7 +167,7 @@ const treeData = [
     {
       name: 'PermissionSet',
       key: 'Permission Set',
-      checkable: false,
+      isTopLevel: true,
       children: [
         {
           name: 'JuniorAdminPermissionSet',
@@ -194,6 +188,7 @@ const treeData = [
     {
       name: 'Profile',
       key: 'Profile',
+      isTopLevel: true,
       children: [
         {
           name: 'Account Executive',
