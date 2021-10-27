@@ -38,15 +38,14 @@
 }
 
 .ant-tree-checkbox {
-  position: absolute!important;
-  right: 0px!important;
+  order: 1;
   z-index: 99;
   margin: 0px 8px 0 0!important;
 }
 
 .ant-tree-treenode-checkbox-checked, .ant-tree-treenode-checkbox-checked .ant-tree-switcher {
   background: #f5f5f5!important;
-  border-radius: 16px!important;
+  border-radius: 8px!important;
 }
 
 .ant-tree-checkbox-checked .ant-tree-checkbox-inner {
@@ -66,7 +65,7 @@
 }
 
 .ant-tree .ant-tree-treenode {
-  padding: 0px!important;
+  padding: 0px;
   margin: 1px; /* 0px 0px 4px 0px */
   align-items: center!important;
   /* padding: 4px 0px!important; */
@@ -83,7 +82,7 @@
   border-radius: 4px!important;
 }
 
-.ant-tree-checkbox-indeterminate .ant-tree-checkbox-inner::after {
+.ant-tree-checkbox-inner::after {
   border-right: 0px!important;
   background-color: transparent!important;
   transform: translate(15%, -75%) scale(1)!important;
@@ -91,20 +90,59 @@
   width: 8px!important;
 }
 
-.ant-tree-show-line .ant-tree-switcher {
+.ant-tree-switcher {
   background: transparent!important;
 }
 
-.ant-tree .ant-tree-treenode-selected {
-  border-radius: 16px!important;
+.ant-tree-treenode-selected {
+  border-radius: 8px!important;
   background: transparent;
   border: 1px solid #0094FF;
-  margin-left: 1px!important;
+  margin: 0px!important;
 }
 
-.ant-tree .ant-tree-node-content-wrapper.ant-tree-node-selected {
+.ant-tree-node-selected {
   background: transparent!important;
 }
+
+.ant-tree-treenode-selected .ant-tree-title {
+  text-decoration: underline!important;
+}
+
+.ant-tree-checkbox-checked::after {
+  border-radius: 4px;
+}
+
+.ant-tree-node-content-wrapper:hover {
+  background-color: transparent;
+}
+
+.ant-tree-node-content-title-prodly {
+  font-size: 14;
+  white-space: no-wrap;
+}
+
+.ant-tree-node-content-title-prodly-top-level {
+  font-size: 16;
+  font-weight: 700;
+  white-space: no-wrap;
+}
+
+.ant-tree-node-content-title-prodly-folder {
+  color: #9DA1A2;
+  font-size: 14;
+  white-space: no-wrap;
+}
+
+.topLevel {
+  margin-top: 0px!important;
+
+}
+
+.topLevel > .ant-tree-switcher {
+  order: 1;
+}
+
 
 
 /* .ant-tree-treenode:hover {
